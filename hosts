@@ -1,0 +1,12 @@
+[master]
+ansible.ziyotek.local
+
+[web]
+sparebox.ziyotek.local
+
+[nfs]
+nfs.ziyotek.local
+nfsclient.ziyotek.local
+
+[wiki]
+wikimedia.ziyotek.local

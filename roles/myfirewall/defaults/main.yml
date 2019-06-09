@@ -1,0 +1,3 @@
+---
+# defaults file for myfirewalld
+firewall_service: ssh
