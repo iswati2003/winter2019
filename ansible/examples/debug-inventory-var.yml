@@ -1,0 +1,10 @@
+---
+- hosts: web
+  tasks:
+    - name: Print a variable
+      debug:
+        var: ansible_hostname
+        #msg: "This is hostname of db server: {{ansible_hostname}}"
+      debug:
+        #msg: "This is inventory variable: {{servername}}"
+        var: servername

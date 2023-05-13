@@ -1,0 +1,11 @@
+---
+- name: testing variable
+  hosts: all
+  #gather_facts: no
+  tasks:
+  - name: display date on server
+    shell: date
+    register: output
+
+  - debug: msg=" Date is {{output.stdout}}"  
+  - debug: var=ansible_distribution

@@ -1,0 +1,21 @@
+- name: Create file and add lines
+  hosts: all
+  become: true
+  tasks:
+    - name: Create file
+      file:
+        path: /tmp/example.txt
+        state: touch
+    - name: Add lines to file
+      blockinfile:
+        path: /tmp/example.txt
+        block: |
+          This is the first line.
+          This is the second line.
+          This is the third line.
+
+    - name: Add lines to file
+      lineinfile:
+        path: /tmp/example.txt
+        line: This is task2
+

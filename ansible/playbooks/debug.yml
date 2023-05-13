@@ -1,0 +1,12 @@
+---
+- name: debug learning
+  hosts: web
+  #gather_facts: no
+
+  tasks:
+    - name: Print a variable
+      debug:
+        #msg: "This is group variable: {{inventory_hostname}}"
+        var: ansible_distribution
+
+  

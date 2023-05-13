@@ -1,0 +1,19 @@
+- name: Create file and add lines
+  hosts: anygroup
+  become: true
+  tasks:
+    - name: Create file
+      file:
+        path: /temp/task1.txt
+        state: touch
+
+    - name: Add lines to file
+      blockinfile:
+        path: /temp/task1.txt
+        block: |
+          This is the first line.
+          This is the second line.
+          This is the third line.
+      lineinfile:
+        path: /temp/task1.txt
+        line: This is my second task 

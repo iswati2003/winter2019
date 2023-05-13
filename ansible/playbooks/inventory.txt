@@ -1,0 +1,16 @@
+
+[web]
+192.168.1.125
+
+[db]
+192.168.1.122
+
+[example-group]
+192.168.1.123
+
+[web:vars]
+servervar=webservers
+
+[prod:children]
+db
+web

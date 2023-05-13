@@ -1,0 +1,15 @@
+---
+- name: Example playbook
+  hosts: web
+  become: true
+  tasks:
+    - name: Create directory
+      file:
+        path: /tmp/example
+        state: directory
+      #ignore_errors: yes
+
+    - name: Copy file to directory
+      copy:
+        src: file.txt
+        dest: /tmp/example/

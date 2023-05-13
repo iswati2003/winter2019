@@ -1,0 +1,17 @@
+---
+- name: Install packages on CentOS
+  hosts: db
+  become: true
+  vars:
+    packages_to_install:
+      - httpd
+      - mysql
+      - php
+  
+  tasks:
+    - name: Install packages
+      yum:
+        name: "{{ item }}"
+        state: absent
+      loop: "{{ packages_to_install }}"
+

@@ -1,0 +1,16 @@
+---
+- name: Install packages on Centos
+  hosts: web
+  become: true
+  vars:
+    packages:
+      - httpd
+      - mysql
+      - php
+
+  tasks:
+    - name: Install Lamp packages
+      yum:
+        name: "{{item}}"
+        state: present
+      loop: "{{packages}}"      

@@ -1,0 +1,7 @@
+---
+- name: use firewall role
+  hosts: web
+  user: ansible
+  become: true
+  roles:
+  - myfirewall
